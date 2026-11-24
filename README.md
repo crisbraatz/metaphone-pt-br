@@ -41,6 +41,8 @@ dotnet run -c Release --project benchmarks/MetaphonePtBr.Benchmarks   # benchmar
 dotnet pack src/MetaphonePtBr -c Release -o artifacts    # NuGet package
 ```
 
+Benchmark results against 2.0.14 are in [docs/benchmarks.md](docs/benchmarks.md).
+
 ## Releasing
 
 Push a `vX.Y.Z` tag. The [release workflow](.github/workflows/release.yml) builds, tests, packs and publishes to NuGet.org using Trusted Publishing, then creates a GitHub Release. One-time setup: create a Trusted Publishing policy on nuget.org for this repository and workflow, a GitHub environment named `nuget`, and an environment secret `NUGET_USER` with your nuget.org profile name.

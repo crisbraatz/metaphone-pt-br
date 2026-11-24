@@ -24,7 +24,9 @@ internal static class WordNormalizer
             return false;
         }
 
-        string composed = input!.Normalize(NormalizationForm.FormC);
+        // Every supported letter is already precomposed, so a word made only of supported letters is NFC and
+        // the (comparatively expensive) normalization call can be skipped.
+        string composed = AllSupported(input!) ? input! : input!.Normalize(NormalizationForm.FormC);
         char[] buffer = new char[composed.Length];
 
         for (int i = 0; i < composed.Length; i++)
@@ -49,6 +51,19 @@ internal static class WordNormalizer
         letter is (>= 'A' and <= 'Z') or (>= 'a' and <= 'z')
             or 'Á' or 'À' or 'Â' or 'Ã' or 'É' or 'Ê' or 'Í' or 'Ó' or 'Ô' or 'Õ' or 'Ú' or 'Ü' or 'Ç'
             or 'á' or 'à' or 'â' or 'ã' or 'é' or 'ê' or 'í' or 'ó' or 'ô' or 'õ' or 'ú' or 'ü' or 'ç';
+
+    private static bool AllSupported(string input)
+    {
+        for (int i = 0; i < input.Length; i++)
+        {
+            if (!IsSupportedLetter(input[i]))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 
     // string.Normalize throws on ill-formed UTF-16 on some runtimes (e.g. .NET Framework), so surrogates
     // are rejected before normalizing. On .NET 10 the letter check rejects them anyway, so a Boolean mutant on the

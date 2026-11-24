@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace MetaphonePtBr.Rules;
 
 /// <summary>
@@ -14,8 +12,11 @@ internal static class RuleEngine
     /// <returns>The concatenated phonetic token; empty when every letter is bypassed.</returns>
     internal static string Encode(string folded)
     {
-        StringBuilder builder = new StringBuilder(folded.Length);
-
+        // Buffer sizing invariant: a rule applied at index i consumes Skip + 1 letters and emits a token of
+        // at most 2 * (Skip + 1) characters. Summed over the whole word, the emitted length never exceeds
+        // 2 * folded.Length, so the buffer cannot overflow. RuleTokenLengthTests enforces this for every rule.
+        char[] buffer = new char[folded.Length * 2];
+        int length = 0;
         int index = 0;
 
         while (index < folded.Length)
@@ -24,15 +25,19 @@ internal static class RuleEngine
 
             RuleResult result = Dispatch(context);
 
-            builder.Append(result.Token);
+            string token = result.Token;
+            for (int i = 0; i < token.Length; i++)
+            {
+                buffer[length++] = token[i];
+            }
 
             index += result.Skip + 1;
         }
 
-        return builder.ToString();
+        return length == 0 ? string.Empty : new string(buffer, 0, length);
     }
 
-    private static RuleResult Dispatch(in LetterContext context)
+    internal static RuleResult Dispatch(in LetterContext context)
     {
         switch (context.Current)
         {

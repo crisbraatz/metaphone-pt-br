@@ -10,12 +10,25 @@ internal static class AccentFolder
     /// Ç and the ASCII letters are kept unchanged.
     /// </summary>
     /// <param name="normalized">An uppercase, NFC-normalized word as returned by <see cref="WordNormalizer"/>.</param>
-    /// <returns>The folded word.</returns>
+    /// <returns>The folded word; the same instance when it contains no accented letter.</returns>
     internal static string Fold(string normalized)
     {
+        int first = 0;
+        while (first < normalized.Length && FoldLetter(normalized[first]) == normalized[first])
+        {
+            first++;
+        }
+
+        if (first == normalized.Length)
+        {
+            return normalized;
+        }
+
         char[] buffer = new char[normalized.Length];
 
-        for (int i = 0; i < normalized.Length; i++)
+        normalized.CopyTo(0, buffer, 0, first);
+
+        for (int i = first; i < normalized.Length; i++)
         {
             buffer[i] = FoldLetter(normalized[i]);
         }

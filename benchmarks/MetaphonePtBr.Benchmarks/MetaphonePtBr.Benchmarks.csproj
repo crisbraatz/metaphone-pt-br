@@ -16,4 +16,26 @@
     <ProjectReference Include="..\..\src\MetaphonePtBr\MetaphonePtBr.csproj" />
   </ItemGroup>
 
+  <!--
+    Legacy MetaphonePtBr 2.0.14 (same assembly name and package id as the 3.0.0 project reference).
+    PackageDownload only places the package in the global packages folder; unlike PackageReference it
+    does not join the dependency graph, so there is no id clash and no compile or output copy. The DLL
+    is embedded and loaded in an isolated AssemblyLoadContext by LegacyMetaphone. Its SHA-256 is checked
+    there, because PackageDownload is not recorded in packages.lock.json.
+  -->
+  <ItemGroup>
+    <PackageDownload Include="MetaphonePtBr" Version="[2.0.14]" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Condition="'$(NuGetPackageRoot)' != ''" Include="$(NuGetPackageRoot)metaphoneptbr/2.0.14/lib/netstandard2.0/MetaphonePtBr.dll" LogicalName="legacy/MetaphonePtBr.dll" Link="legacy/MetaphonePtBr.dll" Visible="false" />
+    <EmbeddedResource Include="..\..\tests\MetaphonePtBr.Tests\Fixtures\oracle-2.0.14.tsv" LogicalName="oracle-2.0.14.tsv" Link="Fixtures/oracle-2.0.14.tsv" />
+  </ItemGroup>
+
+  <!-- Fails the build loudly when restore did not place the 2.0.14 package in the NuGet cache. -->
+  <Target Name="EnsureLegacyMetaphoneDll" BeforeTargets="PrepareForBuild">
+    <Error Condition="'$(NuGetPackageRoot)' == ''" Text="NuGetPackageRoot is empty. Run dotnet restore so the legacy MetaphonePtBr 2.0.14 package is downloaded." />
+    <Error Condition="'$(NuGetPackageRoot)' != '' and !Exists('$(NuGetPackageRoot)metaphoneptbr/2.0.14/lib/netstandard2.0/MetaphonePtBr.dll')" Text="Legacy MetaphonePtBr 2.0.14 DLL not found in the NuGet cache. Run dotnet restore." />
+  </Target>
+
 </Project>

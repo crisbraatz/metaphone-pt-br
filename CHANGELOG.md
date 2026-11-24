@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Mutation testing (Stryker.NET), benchmarks (BenchmarkDotNet), SourceLink, deterministic builds and package validation.
 - `Metaphone.Encode(string)` returns the phonetic token of a single Brazilian Portuguese word and throws on invalid input.
 - `Metaphone.TryEncode(string?, out string?)` does the same without throwing.
+- Side-by-side benchmarks against 2.0.14 (`EncodeComparisonBenchmarks`), runnable locally and through the on-demand Benchmarks workflow; results in `docs/benchmarks.md`.
+
+### Changed
+- Internal performance improvements: `Metaphone.Encode` and `Metaphone.TryEncode` are faster and allocate fewer objects than 2.0.14 for every input category (no public API change).
 
 ### Removed
 - **Breaking:** `GetMetaphoneToken()` is removed in favor of `Metaphone.Encode` and `Metaphone.TryEncode`.

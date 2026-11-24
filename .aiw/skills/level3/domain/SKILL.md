@@ -30,6 +30,8 @@ updated: 2026-11-24
 10. Palavras formadas só por letras mudas (ex.: "H", "RR", "LH") geram token vazio. (fonte: feature 001)
 11. Até decisão contrária, os tokens devem ser idênticos aos da versão 2.0.14 (gabarito com ~1800 palavras nos testes). (fonte: feature 001)
 
+12. A 3.0.0 deve ser pelo menos tão rápida e alocar no máximo a mesma memória que a 2.0.14; os números de referência ficam em docs/benchmarks.md. (fonte: feature 002)
+
 ## Invariantes
 - Mesma entrada válida → sempre o mesmo token (determinístico, em qualquer framework alvo).
 - O token contém apenas letras maiúsculas A–Z (pode ser vazio).
