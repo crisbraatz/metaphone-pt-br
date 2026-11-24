@@ -18,10 +18,10 @@
     <Description>Brazilian Portuguese phonetic matching for .NET. Converts a single word into a stable phonetic token for name, address, brand and fuzzy search.</Description>
     <PackageTags>metaphone;phonetic;portuguese;pt-br;brazil;fuzzy;search;soundex;matching</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/crisbraatz/MetaphonePtBr</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/crisbraatz/metaphone-pt-br</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>https://github.com/crisbraatz/MetaphonePtBr/blob/main/CHANGELOG.md</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/crisbraatz/metaphone-pt-br/blob/main/CHANGELOG.md</PackageReleaseNotes>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <EnablePackageValidation>true</EnablePackageValidation>

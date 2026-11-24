@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/crisbraatz/MetaphonePtBr/main/assets/brand/logo.png" alt="MetaphonePtBr" width="520">
+  <img src="https://raw.githubusercontent.com/crisbraatz/metaphone-pt-br/main/assets/brand/logo.png" alt="MetaphonePtBr" width="520">
 </p>
 
 <p align="center">
   <a href="https://www.nuget.org/packages/MetaphonePtBr"><img src="https://img.shields.io/nuget/v/MetaphonePtBr" alt="NuGet"></a>
   <a href="https://www.nuget.org/packages/MetaphonePtBr"><img src="https://img.shields.io/nuget/dt/MetaphonePtBr" alt="Downloads"></a>
-  <a href="https://github.com/crisbraatz/MetaphonePtBr/actions/workflows/ci.yml"><img src="https://github.com/crisbraatz/MetaphonePtBr/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/crisbraatz/MetaphonePtBr" alt="License"></a>
+  <a href="https://github.com/crisbraatz/metaphone-pt-br/actions/workflows/ci.yml"><img src="https://github.com/crisbraatz/metaphone-pt-br/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/crisbraatz/metaphone-pt-br" alt="License"></a>
 </p>
 
 Brazilian Portuguese phonetic matching for .NET. `MetaphonePtBr` converts a single word into a stable phonetic token for name, address, brand and fuzzy search: `Christopher`, `Cristofer` and `Cristophr` all become `KRSTF`.

@@ -16,4 +16,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - **Breaking:** the public API is being redesigned; `GetMetaphoneToken()` will be removed. See the migration guide once 3.0.0 is released.
 
-[Unreleased]: https://github.com/crisbraatz/MetaphonePtBr/compare/v2.0.14...HEAD
+[Unreleased]: https://github.com/crisbraatz/metaphone-pt-br/compare/v2.0.14...HEAD

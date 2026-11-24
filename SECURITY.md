@@ -9,7 +9,7 @@
 
 ## Reporting a vulnerability
 Please **do not** open a public issue. Report it privately through
-[GitHub Security Advisories](https://github.com/crisbraatz/MetaphonePtBr/security/advisories/new).
+[GitHub Security Advisories](https://github.com/crisbraatz/metaphone-pt-br/security/advisories/new).
 
 You can expect an acknowledgement within 7 days. Once confirmed, a fix is released as a patch
 version and the advisory is published with credit to the reporter (unless you prefer otherwise).
