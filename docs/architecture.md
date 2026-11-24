@@ -17,7 +17,7 @@
 Single-assembly library with three internal layers and a minimal public surface:
 
 1. **Public API** (`Metaphone` static class): `Encode(string)` / `TryEncode(string, out string)` (plus span overloads on `net10.0`). The only public types.
-2. **Normalization** (`internal`): validates the input contract (single word, PT-BR letters only), folds case and decomposes/recomposes accents into a canonical uppercase buffer.
+2. **Normalization** (`internal`): `WordNormalizer` validates the input contract (single word, PT-BR letters only) and produces an NFC uppercase word; `AccentFolder` reduces it to A–Z plus Ç (as 2.0.14 does) before the rules run.
 3. **Rule engine** (`internal`): left-to-right scan with a context window (previous², previous, current, next, next²); one rule class per letter group, evaluated by priority; each rule returns the emitted sound and how many letters it consumed.
 
 Dependency rule: API → Normalization → Rules. Rules never depend on the API; nothing depends on I/O. DDD/Clean/Hexagonal are intentionally not used: a pure, I/O-free library gains nothing from them.
@@ -71,3 +71,9 @@ Not a service. Release = push a `vX.Y.Z` tag → CD builds, tests, packs (`.nupk
 - Context: Full rewrite of MetaphonePtBr (currently 2.0.14) as 3.0.0 with intentional breaking changes, high quality bar (mutation testing, benchmarks) and NuGet best practices.
 - Decision: C# 14 / .NET 10 LTS SDK; multi-target `netstandard2.0` + `net10.0`; single assembly with public API → normalization → rule engine layers; xUnit v3, Stryker.NET, BenchmarkDotNet; GitHub Actions with Trusted Publishing; `Directory.Build.props` with `TreatWarningsAsErrors`; Microsoft default `.editorconfig`; standard open-source community files.
 - Consequences: Broad compatibility at the cost of polyfills and conditional code; strict build catches issues early but every warning must be resolved; no obsolete shims, so consumers must follow the migration guide.
+
+## ADR-002 — Legacy 2.0.14 output as the behavioral oracle
+- Status: accepted
+- Context: The legacy README rule tables are ambiguous in places (priority, vowels after the first letter). The 3.0.0 rewrite must not silently change tokens.
+- Decision: A fixture (`tests/MetaphonePtBr.Tests/Fixtures/oracle-2.0.14.tsv`, ~1800 words) generated once from the published 2.0.14 package is embedded in the tests; `Metaphone.Encode` must match every row. Future rule corrections update the fixture deliberately in their own feature and are documented in the CHANGELOG.
+- Consequences: Byte-for-byte token compatibility with 2.0.14 is guaranteed for the corpus; rule changes become explicit, reviewable diffs of the fixture.

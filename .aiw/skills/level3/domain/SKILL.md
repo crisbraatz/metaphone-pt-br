@@ -26,9 +26,13 @@ updated: 2026-11-24
 7. A tabela de regras do README legado é o ponto de partida; correções são permitidas quando um caso estiver errado, sempre documentadas no README e no CHANGELOG. (fonte: entrevista)
 8. Grafias como Christofer, Christofr, Christopher, Christophr, Cristofer, Cristofr e Cristophr devem gerar `KRSTF`. (fonte: README legado)
 
+9. Antes das regras, os acentos são simplificados para A–Z mais Ç (Ü vira U, Á vira A etc.); Ç é tratado pela regra do C (som S). (fonte: feature 001)
+10. Palavras formadas só por letras mudas (ex.: "H", "RR", "LH") geram token vazio. (fonte: feature 001)
+11. Até decisão contrária, os tokens devem ser idênticos aos da versão 2.0.14 (gabarito com ~1800 palavras nos testes). (fonte: feature 001)
+
 ## Invariantes
 - Mesma entrada válida → sempre o mesmo token (determinístico, em qualquer framework alvo).
-- O token contém apenas letras maiúsculas A–Z.
+- O token contém apenas letras maiúsculas A–Z (pode ser vazio).
 - Entrada inválida nunca gera token: `Encode` lança exceção, `TryEncode` retorna falso.
 
 ## Fluxos

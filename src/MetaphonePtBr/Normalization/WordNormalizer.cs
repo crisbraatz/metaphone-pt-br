@@ -55,6 +55,7 @@ internal static class WordNormalizer
     // "return true" below survives there as an equivalent mutant.
     private static bool ContainsSurrogate(string input)
     {
+        // Stryker disable Boolean, Block : equivalent on net10.0 (Stryker's target); surrogates are rejected by the letter check regardless.
         foreach (char c in input)
         {
             if (char.IsSurrogate(c))
@@ -62,6 +63,7 @@ internal static class WordNormalizer
                 return true;
             }
         }
+        // Stryker restore Boolean, Block
 
         return false;
     }

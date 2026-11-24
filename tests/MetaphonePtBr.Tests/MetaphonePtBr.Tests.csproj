@@ -23,4 +23,8 @@
     <ProjectReference Include="..\..\src\MetaphonePtBr\MetaphonePtBr.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Fixtures\oracle-2.0.14.tsv" LogicalName="oracle-2.0.14.tsv" />
+  </ItemGroup>
+
 </Project>

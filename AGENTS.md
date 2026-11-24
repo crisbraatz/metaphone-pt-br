@@ -16,7 +16,7 @@ This project is managed by **AI Workflow**. These instructions apply to every AI
 ## Commands
 - Install: `dotnet tool restore && dotnet restore`
 - Run: `dotnet run -c Release --project benchmarks/MetaphonePtBr.Benchmarks` (library; benchmarks are the runnable entry point)
-- Test: `dotnet test` and `cd tests/MetaphonePtBr.Tests && dotnet stryker`
+- Test: `dotnet test` and `dotnet stryker --config-file tests/MetaphonePtBr.Tests/stryker-config.json --solution MetaphonePtBr.slnx` (from the repo root)
 - Lint/format: `dotnet format --verify-no-changes`
 - Build: `dotnet build -c Release` / `dotnet pack src/MetaphonePtBr -c Release -o artifacts`
 
