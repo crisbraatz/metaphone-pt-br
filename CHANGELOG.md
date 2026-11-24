@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Internal performance improvements: `Metaphone.Encode` and `Metaphone.TryEncode` are faster and allocate fewer objects than 2.0.14 for every input category (no public API change).
+- Redesigned the GitHub README with a centered logo, badges, emoji sections, a flow diagram, tables and collapsible rule reference; the NuGet package now ships a dedicated markdown-only README (`docs/nuget/README.md`).
 
 ### Removed
 - **Breaking:** `GetMetaphoneToken()` is removed in favor of `Metaphone.Encode` and `Metaphone.TryEncode`.
