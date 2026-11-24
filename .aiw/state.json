@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "initialized": true,
+  "step": "done",
+  "userLanguage": "pt-BR",
+  "branchMode": "main",
+  "trunkBranch": "main",
+  "createdWith": "claude",
+  "lastAgent": "claude",
+  "businessSummary": "MetaphonePtBr is an open-source (MIT) .NET library published on NuGet that converts a single Brazilian Portuguese word into a stable phonetic token for fuzzy name/address/brand search. This is a full AI-guided rewrite as version 3.0.0 (current is 2.0.14) of the same package ID with intentional breaking changes and no obsolete shims, multi-targeting netstandard2.0 and net10.0, free to redesign the API and fix phonetic rules (based on the legacy README at github.com/crisbraatz/MetaphonePtBrOld). Success means full rule test coverage, automated NuGet publishing via GitHub Actions, high Stryker.NET mutation score, benchmarks at least as fast as 2.x, complete docs with a 2.x migration guide, and a brand-new icon and logo.",
+  "stack": [
+    ".NET SDK 10.0.404 (LTS)",
+    "C# 14",
+    "netstandard2.0 + net10.0",
+    "PolySharp 1.17.1",
+    "xUnit v3 4.0.3",
+    "Stryker.NET 5.1.0",
+    "BenchmarkDotNet 0.15.8",
+    "Microsoft.SourceLink.GitHub 11.0.100",
+    "DotNet.ReproducibleBuilds 2.0.5",
+    "GitHub Actions"
+  ],
+  "architecture": "Single-assembly layered library: public API -> normalization -> rule engine (internal)",
+  "skills": {
+    "level2": [
+      {
+        "name": "dotnet-library",
+        "kind": "technology",
+        "sources": [
+          "learn.microsoft.com library-guidance (nuget, cross-platform-targeting)",
+          "model-knowledge"
+        ]
+      },
+      {
+        "name": "nuget-trusted-publishing",
+        "kind": "technology",
+        "sources": [
+          "https://github.com/dotnet/skills \u2014 Microsoft"
+        ]
+      },
+      {
+        "name": "directory-build-organization",
+        "kind": "technology",
+        "sources": [
+          "https://github.com/dotnet/skills \u2014 Microsoft"
+        ]
+      },
+      {
+        "name": "microbenchmarking",
+        "kind": "technology",
+        "sources": [
+          "https://github.com/dotnet/skills \u2014 Microsoft"
+        ]
+      },
+      {
+        "name": "xunit-v3",
+        "kind": "technology",
+        "sources": [
+          "xunit.net getting-started v3",
+          "model-knowledge"
+        ]
+      },
+      {
+        "name": "stryker-net",
+        "kind": "technology",
+        "sources": [
+          "stryker-mutator.io configuration",
+          "model-knowledge"
+        ]
+      },
+      {
+        "name": "architecture-layered-library",
+        "kind": "architecture",
+        "sources": [
+          "learn.microsoft.com library-guidance & design-guidelines",
+          "model-knowledge"
+        ]
+      }
+    ],
+    "level3": [
+      {
+        "name": "domain",
+        "path": ".aiw/skills/level3/domain/SKILL.md"
+      }
+    ]
+  },
+  "currentFeature": null,
+  "checkpoint": null,
+  "featureCounter": 0
+}

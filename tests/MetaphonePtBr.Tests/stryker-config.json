@@ -1,0 +1,19 @@
+{
+  "stryker-config": {
+    "project": "MetaphonePtBr.csproj",
+    "target-framework": "net10.0",
+    "test-runner": "mtp",
+    "mutation-level": "Standard",
+    "reporters": [
+      "html",
+      "progress",
+      "cleartext",
+      "markdown"
+    ],
+    "thresholds": {
+      "high": 95,
+      "low": 90,
+      "break": 90
+    }
+  }
+}

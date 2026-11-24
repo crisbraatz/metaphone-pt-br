@@ -1,0 +1,21 @@
+<Project>
+
+  <PropertyGroup>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+
+  <ItemGroup Label="Build">
+    <PackageVersion Include="DotNet.ReproducibleBuilds" Version="2.0.5" />
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="11.0.100" />
+    <PackageVersion Include="PolySharp" Version="1.17.1" />
+  </ItemGroup>
+
+  <ItemGroup Label="Tests">
+    <PackageVersion Include="xunit.v3" Version="4.0.3" />
+  </ItemGroup>
+
+  <ItemGroup Label="Benchmarks">
+    <PackageVersion Include="BenchmarkDotNet" Version="0.15.8" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MetaphonePtBr/MetaphonePtBr.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MetaphonePtBr.Tests/MetaphonePtBr.Tests.csproj" />
+  </Folder>
+  <Folder Name="/benchmarks/">
+    <Project Path="benchmarks/MetaphonePtBr.Benchmarks/MetaphonePtBr.Benchmarks.csproj" />
+  </Folder>
+</Solution>
