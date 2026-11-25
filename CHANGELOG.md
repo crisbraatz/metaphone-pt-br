@@ -7,15 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0] - 2026-11-24
+
 ### Added
-- Full rewrite for 3.0.0: new project structure targeting `netstandard2.0` and `net10.0`.
-- Input normalization that enforces the Brazilian Portuguese input contract.
-- New brand identity: an icon and a logo with the name only (no slogan), built on a navy, emerald and gold palette, combining a phonetic symbol with Brazilian geometry.
-- Complete English README: quick start with `Metaphone.Encode` and `Metaphone.TryEncode`, matching example, common use cases, input contract, errors, how it works, full rule reference, performance summary, migration guide from 2.x, target frameworks, development, releasing, contributing, credits and license.
-- Mutation testing (Stryker.NET), benchmarks (BenchmarkDotNet), SourceLink, deterministic builds and package validation.
 - `Metaphone.Encode(string)` returns the phonetic token of a single Brazilian Portuguese word and throws on invalid input.
 - `Metaphone.TryEncode(string?, out string?)` does the same without throwing.
+- Input normalization that enforces the Brazilian Portuguese input contract.
+- Full rewrite for 3.0.0: new project structure targeting `netstandard2.0` and `net10.0`.
+- Mutation testing (Stryker.NET), benchmarks (BenchmarkDotNet), SourceLink, deterministic builds and package validation.
 - Side-by-side benchmarks against 2.0.14 (`EncodeComparisonBenchmarks`), runnable locally and through the on-demand Benchmarks workflow; results in `docs/benchmarks.md`.
+- New brand identity: an icon and a logo with the name only (no slogan), built on a navy, emerald and gold palette, combining a phonetic symbol with Brazilian geometry.
+- Complete English README: quick start with `Metaphone.Encode` and `Metaphone.TryEncode`, matching example, common use cases, input contract, errors, how it works, full rule reference, performance summary, migration guide from 2.x, target frameworks, development, releasing, contributing, credits and license.
 
 ### Changed
 - Internal performance improvements: `Metaphone.Encode` and `Metaphone.TryEncode` are faster and allocate fewer objects than 2.0.14 for every input category (no public API change).
@@ -24,4 +26,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - **Breaking:** `GetMetaphoneToken()` is removed in favor of `Metaphone.Encode` and `Metaphone.TryEncode`.
 
-[Unreleased]: https://github.com/crisbraatz/metaphone-pt-br/compare/v2.0.14...HEAD
+[Unreleased]: https://github.com/crisbraatz/metaphone-pt-br/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/crisbraatz/metaphone-pt-br/compare/v2.0.14...v3.0.0

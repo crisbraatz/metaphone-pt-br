@@ -6,8 +6,6 @@
 
 MetaphonePtBr turns a single Brazilian Portuguese word into a stable phonetic token. Words that sound alike share the same token, so names, addresses and brands can be matched even when they are spelled differently or contain typos. For example, `Christopher`, `Cristofer` and `Cristophr` all produce `KRSTF`.
 
-> **Status:** version 3.0.0 is a full rewrite and has not been released yet. The latest stable release is 2.0.14. Migration notes for 2.x users are in the [Migrating from 2.x](#migrating-from-2x) section below.
-
 ## Install
 
 ```bash

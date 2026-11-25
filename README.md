@@ -11,8 +11,6 @@
   <a href="https://github.com/crisbraatz/metaphone-pt-br/blob/main/LICENSE"><img src="https://img.shields.io/github/license/crisbraatz/metaphone-pt-br" alt="License"></a>
 </p>
 
-> **Status:** version 3.0.0 is a full rewrite and has not been released yet. The latest stable release is 2.0.14. The 2.x migration notes are in [Migrating from 2.x](#-migrating-from-2x).
-
 ---
 
 ## ✨ What it is
@@ -400,7 +398,7 @@ Requires the .NET SDK pinned in [`global.json`](https://github.com/crisbraatz/me
 
 ## 📦 Releasing
 
-Push a `vX.Y.Z` tag. The [release workflow](https://github.com/crisbraatz/metaphone-pt-br/blob/main/.github/workflows/release.yml) builds, tests, packs and publishes to NuGet.org with Trusted Publishing, then creates a GitHub Release. The one-time setup is a Trusted Publishing policy on nuget.org for this repository and workflow, a GitHub environment named `nuget`, and an environment secret `NUGET_USER` with your nuget.org profile name.
+Push a `vX.Y.Z` tag that matches `<Version>` in `Directory.Build.props`. The [release workflow](https://github.com/crisbraatz/metaphone-pt-br/blob/main/.github/workflows/release.yml) publishes to NuGet.org with Trusted Publishing and creates a GitHub Release. A dry run is available from the Actions tab (`workflow_dispatch`); it builds, tests and packs without publishing. The full guide is in [docs/releasing.md](https://github.com/crisbraatz/metaphone-pt-br/blob/main/docs/releasing.md).
 
 ## 🤝 Contributing
 
